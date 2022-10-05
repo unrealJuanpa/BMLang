@@ -5,25 +5,41 @@ int yylex();
 %}
 
 
-%token DELETE
-%token FROM
-%token NTABLA
-%token WHERE
-%token NOMBREIGUAL
-%token OPERADOR
-%token VALOR
-%token EOL
+%token MAS
+%token MENOS
+%token ENTRE
+%token POR
+%token PINICIO
+%token PFIN
+%token LINICIO
+%token LFIN
+%token MAYOR
+%token MENOR
+%token MAYORIGUAL
+%token MENORIGUAL
+%token IGUALCOMPARA
+%token DIFERENTE
+%token YLOGICO
+%token OLOGICO
+%token TIENE
+%token EOS
+%token DECLARA
+%token INICIOPROGRAM
+%token LEER
+%token IMPRIMIR
+%token SI
+%token ENTONCES
+%token SINO
+%token INICIOCOMENT
+%token FINCOMENT
+%token ESPACIO
+%token ENTERO
+%token INOMBRE
 
 %%
 
-inicio	: expresion EOL								{ printf("Sintaxis correcta!\n"); return 0; }
+inicio	: SI EOS								{ printf("Sintaxis correcta!\n"); return 0; }
 		;
-expresion: DELETE FROM NTABLA WHERE condicion
-		 ;											
-
-condicion: NOMBREIGUAL VALOR OPERADOR condicion
-		 | NOMBREIGUAL VALOR
-		 ;
 
 %%
 

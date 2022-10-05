@@ -1,5 +1,5 @@
 %{
-//#include "archivo.tab.h"
+#include "archivo.tab.h"
 %}
 
 
@@ -16,7 +16,7 @@
 ">"                                             { return MENOR;         }
 ">="                                            { return MAYORIGUAL;    }
 "<="                                            { return MENORIGUAL;    }
-"=="                                            { return IGUAL;         }
+"=="                                            { return IGUALCOMPARA;         }
 "<>"                                            { return DIFERENTE;     }
 "&&"                                            { return YLOGICO;       }
 "||"                                            { return OLOGICO;       }
