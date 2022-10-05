@@ -31,6 +31,7 @@
 ("ELSE"|"else")                                 { return SINO;          }
 "/*"                                            { return INICIOCOMENT;  }
 "*/"                                            { return FINCOMENT;     }
+" "                                             { return ESPACIO;       }
 [0-9]+                                          { return ENTERO;        }
 [a-zA-Z]{1}([0-9]|[a-zA-Z])*                    { return INOMBRE;       }
 .			                                    {  }
