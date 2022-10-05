@@ -41,17 +41,18 @@ int yylex();
 
 %%
 
-programa        : INICIOPROGRAM LINICIO EOL INDENT declaraciones EOL lecturas LFIN EOL 								{ printf("Sintaxis correcta!\n"); return 0; }              
+programa        : INICIOPROGRAM LINICIO EOL declaraciones lecturas LFIN EOL 								{ printf("Sintaxis correcta!\n"); return 0; }              
 		        ;
 
-declaraciones   : DECLARA INDENT enumvar EOS
+declaraciones   : INDENT DECLARA INDENT enumvar EOS EOL
                 ; 
 
 enumvar         : INOMBRE COMA enumvar
                 | INOMBRE 
                 ;
 
-lecturas        : INDENT LEER INDENT INOMBRE EOS EOL
+lecturas        : INDENT LEER INDENT INOMBRE EOS EOL lecturas
+                | INDENT LEER INDENT INOMBRE EOS EOL
                 ;
 
 %%
