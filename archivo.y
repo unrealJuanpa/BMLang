@@ -60,7 +60,23 @@ declaracion     : DECLARA INDENT enumvar EOS
 lectura         : LEER INDENT INOMBRE EOS
                 ;
 
-asignacion      : INOMBRE INDENT TIENE INDENT ENTERO EOS
+asignacion      : INOMBRE INDENT TIENE espaciomas ENTERO operacion EOS
+                | INOMBRE INDENT TIENE espaciomas INOMBRE operacion EOS
+                ;
+
+espaciomas      : INDENT
+                | 
+                ;
+
+operador        : MAS
+                | MENOS
+                | ENTRE
+                | POR
+                ;
+
+operacion       : espaciomas operador espaciomas ENTERO operacion
+                | espaciomas operador espaciomas INOMBRE operacion
+                |
                 ;
 
 %%
