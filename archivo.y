@@ -23,6 +23,9 @@ int yylex();
 %token OLOGICO
 %token TIENE
 %token EOS
+%token EOL
+%token COMA
+%token INDENT
 %token DECLARA
 %token INICIOPROGRAM
 %token LEER
@@ -38,8 +41,15 @@ int yylex();
 
 %%
 
-inicio	: SI EOS								{ printf("Sintaxis correcta!\n"); return 0; }
-		;
+programa        : INICIOPROGRAM LINICIO EOL INDENT declaraciones EOL LFIN EOL 								{ printf("Sintaxis correcta!\n"); return 0; }              
+		        ;
+
+declaraciones   : DECLARA INDENT INOMBRE EOS
+                ; 
+
+enumvar         : INOMBRE
+                | INOMBRE enumvar
+                ;
 
 %%
 

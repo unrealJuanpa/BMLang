@@ -56,18 +56,21 @@
      OLOGICO = 273,
      TIENE = 274,
      EOS = 275,
-     DECLARA = 276,
-     INICIOPROGRAM = 277,
-     LEER = 278,
-     IMPRIMIR = 279,
-     SI = 280,
-     ENTONCES = 281,
-     SINO = 282,
-     INICIOCOMENT = 283,
-     FINCOMENT = 284,
-     ESPACIO = 285,
-     ENTERO = 286,
-     INOMBRE = 287
+     EOL = 276,
+     COMA = 277,
+     INDENT = 278,
+     DECLARA = 279,
+     INICIOPROGRAM = 280,
+     LEER = 281,
+     IMPRIMIR = 282,
+     SI = 283,
+     ENTONCES = 284,
+     SINO = 285,
+     INICIOCOMENT = 286,
+     FINCOMENT = 287,
+     ESPACIO = 288,
+     ENTERO = 289,
+     INOMBRE = 290
    };
 #endif
 
