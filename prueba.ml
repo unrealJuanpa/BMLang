@@ -1,3 +1,3 @@
 MAIN{
-  DEC a;
+  DEC a,b,c;
 }

@@ -44,11 +44,11 @@ int yylex();
 programa        : INICIOPROGRAM LINICIO EOL INDENT declaraciones EOL LFIN EOL 								{ printf("Sintaxis correcta!\n"); return 0; }              
 		        ;
 
-declaraciones   : DECLARA INDENT INOMBRE EOS
+declaraciones   : DECLARA INDENT enumvar EOS
                 ; 
 
-enumvar         : INOMBRE
-                | INOMBRE enumvar
+enumvar         : INOMBRE COMA enumvar
+                | INOMBRE 
                 ;
 
 %%
