@@ -4,7 +4,7 @@ void yyerror(char *mensaje);
 int yylex();
 %}
 
-
+%token POTENCIA
 %token MAS
 %token MENOS
 %token ENTRE
@@ -35,7 +35,6 @@ int yylex();
 %token SINO
 %token INICIOCOMENT
 %token FINCOMENT
-%token ESPACIO
 %token ENTERO
 %token INOMBRE
 
@@ -60,8 +59,8 @@ declaracion     : DECLARA INDENT enumvar EOS
 lectura         : LEER INDENT INOMBRE EOS
                 ;
 
-asignacion      : INOMBRE INDENT TIENE espaciomas ENTERO operacion EOS
-                | INOMBRE INDENT TIENE espaciomas INOMBRE operacion EOS
+asignacion      : INOMBRE espaciomas TIENE espaciomas ENTERO operacion EOS
+                | INOMBRE espaciomas TIENE espaciomas INOMBRE operacion EOS
                 ;
 
 espaciomas      : INDENT
