@@ -52,10 +52,15 @@ desgcoment      : espaciomas INOMBRE espaciomas desgcoment
                 | 
                 ;
 
+elsedelif       : INDENT SINO EOL INDENT EOL 
+                | 
+                ;
+
 sentencia       : INDENT declaracion EOL sentencia
                 | INDENT lectura EOL sentencia
                 | INDENT asignacion EOL sentencia
                 | INDENT MIENTRAS PINICIO compcondicion PFIN EOL INDENT SBEGIN EOL INDENT EOL INDENT SEND EOL sentencia
+                | INDENT SI PINICIO compcondicion PFIN EOL INDENT SBEGIN EOL INDENT EOL elsedelif INDENT SEND EOL sentencia
                 | INDENT SI PINICIO compcondicion PFIN EOL INDENT SBEGIN EOL INDENT EOL INDENT SEND EOL sentencia
                 | INDENT INICIOCOMENT desgcoment FINCOMENT EOL sentencia
                 | INDENT EOL sentencia

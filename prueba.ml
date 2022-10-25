@@ -14,6 +14,13 @@ MAIN{
   if(contador==1)
   begin
     
+  else
+    
+  end
+
+  if(contador==1)
+  begin
+    
   end
 
   /*hola mundo mundial 1234*/
