@@ -86,7 +86,11 @@ extern int yydebug;
     INICIOCOMENT = 287,            /* INICIOCOMENT  */
     FINCOMENT = 288,               /* FINCOMENT  */
     ENTERO = 289,                  /* ENTERO  */
-    INOMBRE = 290                  /* INOMBRE  */
+    INOMBRE = 290,                 /* INOMBRE  */
+    MIENTRAS = 291,                /* MIENTRAS  */
+    CICLOPARA = 292,               /* CICLOPARA  */
+    SBEGIN = 293,                  /* SBEGIN  */
+    SEND = 294                     /* SEND  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif

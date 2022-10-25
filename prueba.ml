@@ -1,7 +1,13 @@
 MAIN{
-  DEC a,b,c;
-  INPUT a;
-  INPUT b;
-  c=1;
-  c=1+1+1;
+  DEC vinicial,vlimite,vpaso,contador;
+  INPUT vinicial;
+  INPUT vlimite;
+  INPUT vpaso;
+  contador=0;
+  /*hola mundo mundial 1234*/
+
+  while(contador==1)
+  begin
+    
+  end
 }

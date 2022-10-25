@@ -37,16 +37,29 @@ int yylex();
 %token FINCOMENT
 %token ENTERO
 %token INOMBRE
+%token MIENTRAS
+%token CICLOPARA
+%token SBEGIN
+%token SEND
 
 %%
 
 programa        : INICIOPROGRAM LINICIO EOL sentencia LFIN EOL 								{ printf("Sintaxis correcta!\n"); return 0; }              
 		        ;
 
+desgcoment      : espaciomas INOMBRE espaciomas desgcoment
+                | espaciomas ENTERO espaciomas desgcoment
+                | 
+                ;
+
 sentencia       : INDENT declaracion EOL sentencia
                 | INDENT lectura EOL sentencia
                 | INDENT asignacion EOL sentencia
-                |
+                | INDENT MIENTRAS PINICIO compcondicion PFIN EOL INDENT SBEGIN EOL INDENT EOL INDENT SEND EOL sentencia
+                | INDENT INICIOCOMENT desgcoment FINCOMENT EOL sentencia
+                | INDENT EOL sentencia
+                | EOL sentencia
+                | 
                 ;
 
 enumvar         : INOMBRE COMA enumvar
@@ -71,12 +84,39 @@ operador        : MAS
                 | MENOS
                 | ENTRE
                 | POR
+                | POTENCIA
                 ;
 
 operacion       : espaciomas operador espaciomas ENTERO operacion
                 | espaciomas operador espaciomas INOMBRE operacion
                 |
                 ;
+
+comparador      : MAYOR
+                | MENOR
+                | MAYORIGUAL
+                | MENORIGUAL
+                | IGUALCOMPARA
+                ;
+
+condicion       : INOMBRE comparador ENTERO
+                | ENTERO comparador INOMBRE
+                | ENTERO comparador ENTERO
+                ;
+
+logop           : YLOGICO
+                | OLOGICO
+                ;
+
+addcondicion    : espaciomas logop espaciomas condicion addcondicion
+                |
+                ;
+
+compcondicion   : condicion
+                | condicion addcondicion
+                ;
+
+
 
 %%
 
